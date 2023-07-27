@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "atnetworking",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/alextudge/ATNetworking",
+      "state" : {
+        "revision" : "fb2dcad2b15e3aaad76ede08aff3ef53d0fa79b7",
+        "version" : "1.0.6"
+      }
+    }
+  ],
+  "version" : 2
+}

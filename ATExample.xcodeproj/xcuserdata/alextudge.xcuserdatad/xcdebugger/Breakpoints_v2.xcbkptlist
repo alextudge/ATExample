@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F795C061-9090-40C1-926D-2784282E2B6D"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FDC8E8A2-3456-43A9-A856-1A7FC185FD1D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../Library/Developer/Xcode/DerivedData/ATExample-cqgydygcdsuoemdvomezuynzdurj/SourcePackages/checkouts/ATNetworking/Sources/ATNetworking/Internal/ATNetworkService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "decode(data:type:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FDC8E8A2-3456-43A9-A856-1A7FC185FD1D - 494a8cae13dd1aa2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ATNetworking.ATNetworkService.decode&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(data: Foundation.Data, type: &#x3c4;_0_0.Type) throws -&gt; &#x3c4;_0_0"
+                  moduleName = "ATExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alextudge/Library/Developer/Xcode/DerivedData/ATExample-cqgydygcdsuoemdvomezuynzdurj/SourcePackages/checkouts/ATNetworking/Sources/ATNetworking/Internal/ATNetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "352">
+               </Location>
+               <Location
+                  uuid = "FDC8E8A2-3456-43A9-A856-1A7FC185FD1D - 494a8cae13dd1aa2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ATNetworking.ATNetworkService.decode&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(data: Foundation.Data, type: &#x3c4;_0_0.Type) throws -&gt; &#x3c4;_0_0"
+                  moduleName = "ATExample"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alextudge/Library/Developer/Xcode/DerivedData/ATExample-cqgydygcdsuoemdvomezuynzdurj/SourcePackages/checkouts/ATNetworking/Sources/ATNetworking/Internal/ATNetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "492">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

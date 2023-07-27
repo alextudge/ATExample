@@ -1,0 +1,65 @@
+{
+  "configurations" : [
+    {
+      "id" : "29DA38A1-BAC6-460F-9DE5-3E0C3FECB188",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ATExample.xcodeproj",
+      "identifier" : "17110DEE2A72A32100435EEA",
+      "name" : "ATExample"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ATExample.xcodeproj",
+        "identifier" : "17110DFF2A72A32300435EEA",
+        "name" : "ATExampleTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ATExample.xcodeproj",
+        "identifier" : "17110E092A72A32300435EEA",
+        "name" : "ATExampleUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/Core\/ATNetworkingKit",
+        "identifier" : "ATNetworkingKitTests",
+        "name" : "ATNetworkingKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/Core\/ATInterfacesKit",
+        "identifier" : "ATInterfacesKitTests",
+        "name" : "ATInterfacesKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/Core\/ATDataModel",
+        "identifier" : "ATDataModelTests",
+        "name" : "ATDataModelTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:..\/ATUsersKit",
+        "identifier" : "ATUsersKitTests",
+        "name" : "ATUsersKitTests"
+      }
+    }
+  ],
+  "version" : 1
+}
