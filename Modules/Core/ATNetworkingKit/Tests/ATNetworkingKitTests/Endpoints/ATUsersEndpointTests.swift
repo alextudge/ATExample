@@ -11,6 +11,11 @@ import XCTest
 final class ATUsersEndpointTests: XCTestCase {
     func testEndpoint_users() {
         XCTAssertEqual(ATUsersEndpoint.users.method, .get)
-        XCTAssertEqual(ATUsersEndpoint.users.path, "users")
+        XCTAssertEqual(ATUsersEndpoint.users.path, "/users")
+    }
+    
+    func testEndpoint_todos() {
+        XCTAssertEqual(ATUsersEndpoint.todos(userId: 1).method, .get)
+        XCTAssertEqual(ATUsersEndpoint.todos(userId: 1).path, "/users/1/todos")
     }
 }

@@ -4,32 +4,31 @@
 import PackageDescription
 
 let package = Package(
-    name: "ATUsersKit",
+    name: "ATPostsKit",
     platforms: [
         .iOS(.v17)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "ATUsersKit",
-            targets: ["ATUsersKit"]),
+            name: "ATPostsKit",
+            targets: ["ATPostsKit"]),
     ],
     dependencies: [
         .package(path: "../ATInterfacesKit"),
         .package(path: "../ATNetworkingKit"),
         .package(path: "../ATDataModel"),
-        .package(path: "../ATUIKit"),
-        .package(path: "../ATPostsKit")
+        .package(path: "../ATUIKit")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "ATUsersKit",
-            dependencies: ["ATInterfacesKit", "ATNetworkingKit", "ATDataModel", "ATUIKit", "ATPostsKit"]
+            name: "ATPostsKit",
+            dependencies: ["ATInterfacesKit", "ATNetworkingKit", "ATDataModel", "ATUIKit"]
         ),
         .testTarget(
-            name: "ATUsersKitTests",
-            dependencies: ["ATUsersKit", "ATInterfacesKit", "ATNetworkingKit", "ATDataModel", "ATUIKit", "ATPostsKit"]),
+            name: "ATPostsKitTests",
+            dependencies: ["ATPostsKit", "ATInterfacesKit", "ATNetworkingKit", "ATDataModel", "ATUIKit"]),
     ]
 )

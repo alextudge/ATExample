@@ -55,9 +55,16 @@
     },
     {
       "target" : {
-        "containerPath" : "container:..\/ATUsersKit",
+        "containerPath" : "container:Modules\/Features\/ATUsersKit",
         "identifier" : "ATUsersKitTests",
         "name" : "ATUsersKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/Core\/ATUIKit",
+        "identifier" : "ATUIKitTests",
+        "name" : "ATUIKitTests"
       }
     }
   ],

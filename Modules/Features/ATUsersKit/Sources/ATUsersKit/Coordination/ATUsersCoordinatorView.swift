@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ATPostsKit
 
 public struct ATUsersCoordinatorView: View {
     
@@ -22,8 +23,8 @@ public struct ATUsersCoordinatorView: View {
                 switch screen {
                 case .home:
                     ATUsersHomeView(viewModel: viewModel.userViewModel())
-                case .posts:
-                    Text("Posts")
+                case .postsCoordinator:
+                    ATPostsCoordinatorView(viewModel: viewModel.postsCoordinatorViewModel())
                 }
             }
         }

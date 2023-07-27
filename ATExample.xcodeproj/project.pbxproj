@@ -50,6 +50,7 @@
 		17110E222A72B1AD00435EEA /* ATUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ATUIKit; sourceTree = "<group>"; };
 		17110E232A72B5C500435EEA /* ATInterfacesKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ATInterfacesKit; sourceTree = "<group>"; };
 		17110E262A72BD4200435EEA /* ATUsersKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ATUsersKit; sourceTree = "<group>"; };
+		17110E2A2A730FD300435EEA /* ATPostsKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ATPostsKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +161,7 @@
 		17110E252A72BCD000435EEA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				17110E2A2A730FD300435EEA /* ATPostsKit */,
 				17110E262A72BD4200435EEA /* ATUsersKit */,
 			);
 			path = Features;

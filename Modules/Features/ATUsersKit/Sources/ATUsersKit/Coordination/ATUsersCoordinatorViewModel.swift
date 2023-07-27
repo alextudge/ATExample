@@ -8,6 +8,7 @@
 import SwiftUI
 import ATNetworkingKit
 import ATInterfacesKit
+import ATPostsKit
 import Observation
 
 @Observable
@@ -24,11 +25,15 @@ class ATUsersCoordinatorViewModel: ATCoordinatorViewModel {
         ATUsersHomeViewModel(networkService: networkService,
                              coordinatorDelegate: self)
     }
+    
+    func postsCoordinatorViewModel() -> ATPostsCoordinatorViewModel {
+        ATPostsCoordinatorViewModel(networkService: networkService)
+    }
 }
 
 extension ATUsersCoordinatorViewModel: ATUsersHomeViewModelCoordinatorDelegate {
     func requestedPosts(userId: Int) {
-        navigationPath.append(ATUsersScreens.posts)
+        navigationPath.append(ATUsersScreens.postsCoordinator)
     }
     
     func requestedAlbums(userId: Int) {

@@ -9,5 +9,5 @@ import Foundation
 
 enum ATUsersScreens {
     case home,
-         posts
+         postsCoordinator
 }

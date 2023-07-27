@@ -1,7 +1,7 @@
 import XCTest
-@testable import ATUsersKit
+@testable import ATPostsKit
 
-final class ATUsersKitTests: XCTestCase {
+final class ATPostsKitTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest

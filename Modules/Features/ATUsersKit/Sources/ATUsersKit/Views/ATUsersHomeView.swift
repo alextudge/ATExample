@@ -19,11 +19,13 @@ struct ATUsersHomeView: View {
                     ForEach(viewModel.users) { user in
                         VStack {
                             ATUserView(viewModel: ATUserViewModel(user: user))
-                            Button("Posts") {
-                                viewModel.view(.posts, userId: user.id)
-                            }
-                            Button("Albums") {
-                                viewModel.view(.albums, userId: user.id)
+                            HStack {
+                                Button("Posts") {
+                                    viewModel.view(.posts, userId: user.id)
+                                }
+                                Button("Albums") {
+                                    viewModel.view(.albums, userId: user.id)
+                                }
                             }
                             ATUserTodoView(viewModel: ATUserTodoViewModel(userId: user.id,
                                                                           networkService: viewModel.networkService))

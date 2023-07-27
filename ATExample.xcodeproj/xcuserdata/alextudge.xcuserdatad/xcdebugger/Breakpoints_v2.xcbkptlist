@@ -49,6 +49,66 @@
                   endingLineNumber = "70"
                   offsetFromSymbolStart = "492">
                </Location>
+               <Location
+                  uuid = "FDC8E8A2-3456-43A9-A856-1A7FC185FD1D - 54229a8d725010c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ATNetworking.ATNetworkService.decode&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(data: Foundation.Data, type: &#x3c4;_0_0.Type) throws -&gt; &#x3c4;_0_0"
+                  moduleName = "ATNetworkingKitTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alextudge/Library/Developer/Xcode/DerivedData/ATExample-cqgydygcdsuoemdvomezuynzdurj/SourcePackages/checkouts/ATNetworking/Sources/ATNetworking/Internal/ATNetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "352">
+               </Location>
+               <Location
+                  uuid = "FDC8E8A2-3456-43A9-A856-1A7FC185FD1D - 54229a8d725010c4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ATNetworking.ATNetworkService.decode&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(data: Foundation.Data, type: &#x3c4;_0_0.Type) throws -&gt; &#x3c4;_0_0"
+                  moduleName = "ATNetworkingKitTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alextudge/Library/Developer/Xcode/DerivedData/ATExample-cqgydygcdsuoemdvomezuynzdurj/SourcePackages/checkouts/ATNetworking/Sources/ATNetworking/Internal/ATNetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "492">
+               </Location>
+               <Location
+                  uuid = "FDC8E8A2-3456-43A9-A856-1A7FC185FD1D - 3c96350f8ac8c239"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ATNetworking.ATNetworkService.decode&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(data: Foundation.Data, type: &#x3c4;_0_0.Type) throws -&gt; &#x3c4;_0_0"
+                  moduleName = "ATUsersKitTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alextudge/Library/Developer/Xcode/DerivedData/ATExample-cqgydygcdsuoemdvomezuynzdurj/SourcePackages/checkouts/ATNetworking/Sources/ATNetworking/Internal/ATNetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "352">
+               </Location>
+               <Location
+                  uuid = "FDC8E8A2-3456-43A9-A856-1A7FC185FD1D - 3c96350f8ac8c239"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ATNetworking.ATNetworkService.decode&lt;&#x3c4;_0_0 where &#x3c4;_0_0: Swift.Decodable&gt;(data: Foundation.Data, type: &#x3c4;_0_0.Type) throws -&gt; &#x3c4;_0_0"
+                  moduleName = "ATUsersKitTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alextudge/Library/Developer/Xcode/DerivedData/ATExample-cqgydygcdsuoemdvomezuynzdurj/SourcePackages/checkouts/ATNetworking/Sources/ATNetworking/Internal/ATNetworkService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "492">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
