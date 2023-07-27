@@ -49,7 +49,7 @@
 		17110E212A72B13800435EEA /* ATExample.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ATExample.xctestplan; sourceTree = "<group>"; };
 		17110E222A72B1AD00435EEA /* ATUIKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ATUIKit; sourceTree = "<group>"; };
 		17110E232A72B5C500435EEA /* ATInterfacesKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ATInterfacesKit; sourceTree = "<group>"; };
-		17110E262A72BD4200435EEA /* ATUsersKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ATUsersKit; path = ../../../ATUsersKit; sourceTree = "<group>"; };
+		17110E262A72BD4200435EEA /* ATUsersKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ATUsersKit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
