@@ -17,16 +17,14 @@ public struct ATUsersCoordinatorView: View {
     }
     
     public var body: some View {
-//        NavigationStack(path: $viewModel.navigationPath) {
-            VStack {
-                ATUsersHomeView(viewModel: viewModel.userViewModel())
+        VStack {
+            ATUsersHomeView(viewModel: viewModel.userViewModel())
+        }
+        .navigationDestination(for: ATUsersScreens.self) { screen in
+            switch screen {
+            case .home(let homeViewModel):
+                ATUsersHomeView(viewModel: homeViewModel)
             }
-            .navigationDestination(for: ATUsersScreens.self) { screen in
-                switch screen {
-                case .home(let homeViewModel):
-                    ATUsersHomeView(viewModel: homeViewModel)
-                }
-            }
-//        }
+        }
     }
 }

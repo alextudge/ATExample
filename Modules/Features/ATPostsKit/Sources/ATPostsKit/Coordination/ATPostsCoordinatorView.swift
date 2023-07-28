@@ -16,16 +16,14 @@ public struct ATPostsCoordinatorView: View {
     }
     
     public var body: some View {
-//        NavigationStack(path: $viewModel.navigationPath) {
-            VStack {
+        VStack {
+            ATPostsView()
+        }
+        .navigationDestination(for: ATPostsScreens.self) { screen in
+            switch screen {
+            case .posts:
                 ATPostsView()
             }
-            .navigationDestination(for: ATPostsScreens.self) { screen in
-                switch screen {
-                case .posts:
-                    ATPostsView()
-                }
-            }
-//        }
+        }
     }
 }

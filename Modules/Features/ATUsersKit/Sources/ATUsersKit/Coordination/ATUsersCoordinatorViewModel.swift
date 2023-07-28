@@ -19,14 +19,11 @@ public enum ATUsersCoordinatorEvents {
 @Observable
 public class ATUsersCoordinatorViewModel {
     
-    public var navigationPath: NavigationPath
     let networkService: ATExampleNetworkServiceProtocol
     public private(set) var coordinatorDelegate = PassthroughSubject<ATUsersCoordinatorEvents, Never>()
     
-    public init(networkService: ATExampleNetworkServiceProtocol,
-                navigationPath: NavigationPath) {
+    public init(networkService: ATExampleNetworkServiceProtocol) {
         self.networkService = networkService
-        self.navigationPath = navigationPath
     }
     
     func userViewModel() -> ATUsersHomeViewModel {

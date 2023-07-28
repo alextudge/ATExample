@@ -34,7 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1706E2972A73B3F3003C1B19 /* ATAppNavigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ATAppNavigation; path = ../../../ATAppNavigation; sourceTree = "<group>"; };
+		1706E2972A73B3F3003C1B19 /* ATAppNavigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ATAppNavigation; path = ../ATAppNavigation; sourceTree = "<group>"; };
 		17110DEF2A72A32100435EEA /* ATExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17110DF22A72A32100435EEA /* ATExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATExampleApp.swift; sourceTree = "<group>"; };
 		17110DF62A72A32300435EEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };

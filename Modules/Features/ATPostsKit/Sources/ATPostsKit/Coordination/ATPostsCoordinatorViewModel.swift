@@ -18,14 +18,11 @@ public enum ATPostsCoordinatorEvents {
 @Observable
 public class ATPostsCoordinatorViewModel {
     
-    public var navigationPath: NavigationPath
     private let networkService: ATExampleNetworkServiceProtocol
     public private(set) var coordinatorDelegate = PassthroughSubject<ATPostsCoordinatorEvents, Never>()
     
-    public init(networkService: ATExampleNetworkServiceProtocol,
-                navigationPath: NavigationPath) {
+    public init(networkService: ATExampleNetworkServiceProtocol) {
         self.networkService = networkService
-        self.navigationPath = navigationPath
     }
 }
 
