@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ATViewState {
+public enum ATViewState: Equatable {
     case loading,
          error(message: String),
          loaded

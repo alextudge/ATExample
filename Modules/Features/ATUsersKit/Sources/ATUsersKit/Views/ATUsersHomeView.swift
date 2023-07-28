@@ -45,8 +45,8 @@ struct ATUsersHomeView: View {
             .safeAreaPadding(.horizontal)
         }
         .navigationTitle("Contacts")
-        .onAppear {
-            viewModel.loadData()
+        .task {
+            await viewModel.loadData()
         }
     }
 }

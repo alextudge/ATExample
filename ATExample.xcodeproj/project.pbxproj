@@ -13,7 +13,6 @@
 		17110DFB2A72A32300435EEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17110DFA2A72A32300435EEA /* Preview Assets.xcassets */; };
 		17110E052A72A32300435EEA /* ATExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17110E042A72A32300435EEA /* ATExampleTests.swift */; };
 		17110E0F2A72A32300435EEA /* ATExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17110E0E2A72A32300435EEA /* ATExampleUITests.swift */; };
-		17110E112A72A32300435EEA /* ATExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17110E102A72A32300435EEA /* ATExampleUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +43,6 @@
 		17110E042A72A32300435EEA /* ATExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATExampleTests.swift; sourceTree = "<group>"; };
 		17110E0A2A72A32300435EEA /* ATExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ATExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		17110E0E2A72A32300435EEA /* ATExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATExampleUITests.swift; sourceTree = "<group>"; };
-		17110E102A72A32300435EEA /* ATExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		17110E1F2A72A48E00435EEA /* ATDataModel */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ATDataModel; sourceTree = "<group>"; };
 		17110E202A72AC5600435EEA /* ATNetworkingKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = ATNetworkingKit; sourceTree = "<group>"; };
 		17110E212A72B13800435EEA /* ATExample.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = ATExample.xctestplan; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				17110E0E2A72A32300435EEA /* ATExampleUITests.swift */,
-				17110E102A72A32300435EEA /* ATExampleUITestsLaunchTests.swift */,
 			);
 			path = ATExampleUITests;
 			sourceTree = "<group>";
@@ -325,7 +322,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17110E112A72A32300435EEA /* ATExampleUITestsLaunchTests.swift in Sources */,
 				17110E0F2A72A32300435EEA /* ATExampleUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -35,18 +35,16 @@ class ATUsersHomeViewModel {
         self.coordinatorDelegate = coordinatorDelegate
     }
     
-    func loadData() {
+    func loadData() async {
         guard users.isEmpty else {
             return
         }
         state = .loading
-        Task {
-            do {
-                users = try await networkService.request(endpoint: ATUsersEndpoint.users, type: [ATUser].self)
-                state = .loaded
-            } catch {
-                state = .error(message: "Something went wrong!")
-            }
+        do {
+            users = try await networkService.request(endpoint: ATUsersEndpoint.users, type: [ATUser].self)
+            state = .loaded
+        } catch {
+            state = .error(message: "Something went wrong!")
         }
     }
     

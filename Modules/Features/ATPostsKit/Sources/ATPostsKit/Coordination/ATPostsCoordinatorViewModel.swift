@@ -15,14 +15,25 @@ public enum ATPostsCoordinatorEvents {
     case finished
 }
 
+public protocol ATPostsCoordinatorViewModelCoordinatorDelegate: AnyObject {
+    func postsFlowDidFinish()
+}
+
 @Observable
 public class ATPostsCoordinatorViewModel {
     
     private let networkService: ATExampleNetworkServiceProtocol
-    public private(set) var coordinatorDelegate = PassthroughSubject<ATPostsCoordinatorEvents, Never>()
     
-    public init(networkService: ATExampleNetworkServiceProtocol) {
+    private weak var coordinatorDelegate: ATPostsCoordinatorViewModelCoordinatorDelegate?
+    
+    public init(networkService: ATExampleNetworkServiceProtocol,
+                coordinatorDelegate: ATPostsCoordinatorViewModelCoordinatorDelegate) {
         self.networkService = networkService
+        self.coordinatorDelegate = coordinatorDelegate
+    }
+    
+    func didTapClose() {
+        coordinatorDelegate?.postsFlowDidFinish()
     }
 }
 

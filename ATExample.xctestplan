@@ -66,6 +66,20 @@
         "identifier" : "ATUIKitTests",
         "name" : "ATUIKitTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/Features\/ATPostsKit",
+        "identifier" : "ATPostsKitTests",
+        "name" : "ATPostsKitTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/ATAppNavigation",
+        "identifier" : "ATAppNavigationTests",
+        "name" : "ATAppNavigationTests"
+      }
     }
   ],
   "version" : 1

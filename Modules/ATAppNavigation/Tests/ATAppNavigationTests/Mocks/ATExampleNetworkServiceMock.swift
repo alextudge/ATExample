@@ -12,34 +12,16 @@ import Combine
 @testable import ATUsersKit
 
 class ATExampleNetworkServiceMock: ATExampleNetworkServiceProtocol {
-    
-    var error: ATError?
-    var object: Any?
-    
     func request<T>(endpoint: ATNetworking.ATEndpoint, type: T.Type, completion: @escaping (Result<T, ATNetworking.ATError>) -> Void) where T : Decodable {
-        if let object = object as? T {
-            completion(.success(object))
-        } else {
-            completion(.failure(error ?? ATError.unauthorised))
-        }
+        completion(.failure(ATError.invalidUrl))
     }
     
     func request<T>(endpoint: ATNetworking.ATEndpoint, type: T.Type) -> AnyPublisher<T, ATNetworking.ATError> where T : Decodable {
-        if let object = object as? T {
-            return Just(object)
-                .setFailureType(to: ATError.self)
-                .eraseToAnyPublisher()
-        } else {
-            return Fail(error: error ?? ATError.invalidUrl)
-                .eraseToAnyPublisher()
-        }
+        Fail(error: ATError.invalidUrl)
+            .eraseToAnyPublisher()
     }
     
     func request<T>(endpoint: ATNetworking.ATEndpoint, type: T.Type) async throws -> T where T : Decodable {
-        if let object = object as? T {
-            return object
-        } else {
-            throw error ?? ATError.invalidUrl
-        }
+        throw ATError.invalidUrl
     }
 }

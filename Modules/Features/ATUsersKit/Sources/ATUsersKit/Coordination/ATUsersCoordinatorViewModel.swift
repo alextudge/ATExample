@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 import ATNetworkingKit
 import ATInterfacesKit
 import ATPostsKit
@@ -16,14 +15,22 @@ public enum ATUsersCoordinatorEvents {
     case didRequestPosts
 }
 
+public protocol ATUsersCoordinatorViewModelCoordinatorDelegate: AnyObject {
+    func didRequestPosts(userId: Int)
+    func didRequestAlbums(userId: Int)
+}
+
 @Observable
 public class ATUsersCoordinatorViewModel {
     
     let networkService: ATExampleNetworkServiceProtocol
-    public private(set) var coordinatorDelegate = PassthroughSubject<ATUsersCoordinatorEvents, Never>()
     
-    public init(networkService: ATExampleNetworkServiceProtocol) {
+    private weak var coordinatorDelegate: ATUsersCoordinatorViewModelCoordinatorDelegate?
+    
+    public init(networkService: ATExampleNetworkServiceProtocol,
+                coordinatorDelegate: ATUsersCoordinatorViewModelCoordinatorDelegate) {
         self.networkService = networkService
+        self.coordinatorDelegate = coordinatorDelegate
     }
     
     func userViewModel() -> ATUsersHomeViewModel {
@@ -34,11 +41,11 @@ public class ATUsersCoordinatorViewModel {
 
 extension ATUsersCoordinatorViewModel: ATUsersHomeViewModelCoordinatorDelegate {
     func requestedPosts(userId: Int) {
-        coordinatorDelegate.send(.didRequestPosts)
+        coordinatorDelegate?.didRequestPosts(userId: userId)
     }
     
     func requestedAlbums(userId: Int) {
-        
+        coordinatorDelegate?.didRequestAlbums(userId: userId)
     }
 }
 
