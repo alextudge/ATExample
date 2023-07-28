@@ -20,10 +20,10 @@ struct ATUsersHomeView: View {
                         VStack {
                             ATUserView(viewModel: ATUserViewModel(user: user))
                             HStack {
-                                Button("Posts") {
+                                Button(String(localized: "Posts")) {
                                     viewModel.view(.posts, userId: user.id)
                                 }
-                                Button("Albums") {
+                                Button(String(localized: "Albums")) {
                                     viewModel.view(.albums, userId: user.id)
                                 }
                             }
@@ -31,12 +31,7 @@ struct ATUsersHomeView: View {
                                                                           networkService: viewModel.networkService))
                         }
                         .containerRelativeFrame(.horizontal)
-                        .scrollTransition(.animated.threshold(.visible(0.9)), axis: .horizontal) { content, phase in
-                            content
-                                .opacity(phase.isIdentity ? 1 : 0.75)
-                                .scaleEffect(phase.isIdentity ? 1 : 0.9)
-                                .blur(radius: phase.isIdentity ? 0 : 2)
-                        }
+                        .edgeFadeAnimation()
                     }
                 }
                 .scrollTargetLayout()
