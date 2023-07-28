@@ -6,37 +6,51 @@
 //
 
 import SwiftUI
+import Combine
 import ATNetworkingKit
 import ATInterfacesKit
 import ATPostsKit
 import Observation
 
+public enum ATUsersCoordinatorEvents {
+    case didRequestPosts
+}
+
 @Observable
-class ATUsersCoordinatorViewModel: ATCoordinatorViewModel {
+public class ATUsersCoordinatorViewModel {
     
-    var navigationPath = NavigationPath()
+    public var navigationPath: NavigationPath
     let networkService: ATExampleNetworkServiceProtocol
+    public private(set) var coordinatorDelegate = PassthroughSubject<ATUsersCoordinatorEvents, Never>()
     
-    init(networkService: ATExampleNetworkServiceProtocol = ATExampleNetworkServiceInitialiser().networkService()) {
+    public init(networkService: ATExampleNetworkServiceProtocol,
+                navigationPath: NavigationPath) {
         self.networkService = networkService
+        self.navigationPath = navigationPath
     }
     
     func userViewModel() -> ATUsersHomeViewModel {
         ATUsersHomeViewModel(networkService: networkService,
                              coordinatorDelegate: self)
     }
-    
-    func postsCoordinatorViewModel() -> ATPostsCoordinatorViewModel {
-        ATPostsCoordinatorViewModel(networkService: networkService)
-    }
 }
 
 extension ATUsersCoordinatorViewModel: ATUsersHomeViewModelCoordinatorDelegate {
     func requestedPosts(userId: Int) {
-        navigationPath.append(ATUsersScreens.postsCoordinator)
+        coordinatorDelegate.send(.didRequestPosts)
     }
     
     func requestedAlbums(userId: Int) {
         
+    }
+}
+
+extension ATUsersCoordinatorViewModel: Equatable, Hashable {
+    public static func == (lhs: ATUsersCoordinatorViewModel, rhs: ATUsersCoordinatorViewModel) -> Bool {
+        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self))
     }
 }

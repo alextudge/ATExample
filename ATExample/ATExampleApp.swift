@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
-import ATUsersKit
+import ATAppNavigation
 
 @main
 struct ATExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ATUsersCoordinatorView()
+            ATAppNavigationCoordinatorView()
         }
     }
 }

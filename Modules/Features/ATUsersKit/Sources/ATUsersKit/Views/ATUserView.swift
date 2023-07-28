@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ATUserView: View {
     
-    @State var viewModel: ATUserViewModel
+    @Bindable var viewModel: ATUserViewModel
     
     var body: some View {
         HStack {

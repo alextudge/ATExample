@@ -10,7 +10,7 @@ import ATUIKit
 
 struct ATUsersHomeView: View {
     
-    @State var viewModel: ATUsersHomeViewModel
+    @Bindable var viewModel: ATUsersHomeViewModel
     
     var body: some View {
         ATLoadableView(state: $viewModel.state) {
@@ -30,7 +30,6 @@ struct ATUsersHomeView: View {
                             ATUserTodoView(viewModel: ATUserTodoViewModel(userId: user.id,
                                                                           networkService: viewModel.networkService))
                         }
-                        .scrollTarget()
                         .containerRelativeFrame(.horizontal)
                         .scrollTransition(.animated.threshold(.visible(0.9)), axis: .horizontal) { content, phase in
                             content

@@ -16,8 +16,8 @@ public struct ATPostsCoordinatorView: View {
     }
     
     public var body: some View {
-        NavigationStack(path: $viewModel.navigationPath) {
-            VStack() {
+//        NavigationStack(path: $viewModel.navigationPath) {
+            VStack {
                 ATPostsView()
             }
             .navigationDestination(for: ATPostsScreens.self) { screen in
@@ -26,6 +26,6 @@ public struct ATPostsCoordinatorView: View {
                     ATPostsView()
                 }
             }
-        }
+//        }
     }
 }

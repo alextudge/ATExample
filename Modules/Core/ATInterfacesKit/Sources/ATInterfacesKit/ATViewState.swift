@@ -8,5 +8,7 @@
 import Foundation
 
 public enum ATViewState {
-    case loading, error(message: String), loaded
+    case loading,
+         error(message: String),
+         loaded
 }

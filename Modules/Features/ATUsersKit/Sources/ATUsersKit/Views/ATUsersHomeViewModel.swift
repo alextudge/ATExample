@@ -56,3 +56,13 @@ class ATUsersHomeViewModel {
         }
     }
 }
+
+extension ATUsersHomeViewModel: Equatable, Hashable {
+    public static func == (lhs: ATUsersHomeViewModel, rhs: ATUsersHomeViewModel) -> Bool {
+        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self))
+    }
+}

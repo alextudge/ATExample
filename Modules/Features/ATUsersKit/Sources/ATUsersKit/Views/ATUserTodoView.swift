@@ -10,7 +10,7 @@ import ATUIKit
 
 struct ATUserTodoView: View {
     
-    @State var viewModel: ATUserTodoViewModel
+    @Bindable var viewModel: ATUserTodoViewModel
     
     var body: some View {
         ATLoadableView(state: $viewModel.state) {

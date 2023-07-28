@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17027F3C2A73B618002CF351 /* ATAppNavigation in Frameworks */ = {isa = PBXBuildFile; productRef = 17027F3B2A73B618002CF351 /* ATAppNavigation */; };
 		17110DF32A72A32100435EEA /* ATExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17110DF22A72A32100435EEA /* ATExampleApp.swift */; };
 		17110DF72A72A32300435EEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17110DF62A72A32300435EEA /* Assets.xcassets */; };
 		17110DFB2A72A32300435EEA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17110DFA2A72A32300435EEA /* Preview Assets.xcassets */; };
 		17110E052A72A32300435EEA /* ATExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17110E042A72A32300435EEA /* ATExampleTests.swift */; };
 		17110E0F2A72A32300435EEA /* ATExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17110E0E2A72A32300435EEA /* ATExampleUITests.swift */; };
 		17110E112A72A32300435EEA /* ATExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17110E102A72A32300435EEA /* ATExampleUITestsLaunchTests.swift */; };
-		17110E292A72BE4500435EEA /* ATUsersKit in Frameworks */ = {isa = PBXBuildFile; productRef = 17110E282A72BE4500435EEA /* ATUsersKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1706E2972A73B3F3003C1B19 /* ATAppNavigation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ATAppNavigation; path = ../../../ATAppNavigation; sourceTree = "<group>"; };
 		17110DEF2A72A32100435EEA /* ATExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17110DF22A72A32100435EEA /* ATExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATExampleApp.swift; sourceTree = "<group>"; };
 		17110DF62A72A32300435EEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,7 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17110E292A72BE4500435EEA /* ATUsersKit in Frameworks */,
+				17027F3C2A73B618002CF351 /* ATAppNavigation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +162,7 @@
 		17110E252A72BCD000435EEA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				1706E2972A73B3F3003C1B19 /* ATAppNavigation */,
 				17110E2A2A730FD300435EEA /* ATPostsKit */,
 				17110E262A72BD4200435EEA /* ATUsersKit */,
 			);
@@ -191,7 +193,7 @@
 			);
 			name = ATExample;
 			packageProductDependencies = (
-				17110E282A72BE4500435EEA /* ATUsersKit */,
+				17027F3B2A73B618002CF351 /* ATAppNavigation */,
 			);
 			productName = ATExample;
 			productReference = 17110DEF2A72A32100435EEA /* ATExample.app */;
@@ -666,9 +668,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		17110E282A72BE4500435EEA /* ATUsersKit */ = {
+		17027F3B2A73B618002CF351 /* ATAppNavigation */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = ATUsersKit;
+			productName = ATAppNavigation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

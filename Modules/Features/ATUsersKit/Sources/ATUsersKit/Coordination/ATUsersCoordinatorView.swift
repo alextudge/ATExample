@@ -10,27 +10,23 @@ import ATPostsKit
 
 public struct ATUsersCoordinatorView: View {
     
-    @Bindable private var viewModel = ATUsersCoordinatorViewModel()
+    @Bindable private var viewModel: ATUsersCoordinatorViewModel
     
-    public init() {}
+    public init(viewModel: ATUsersCoordinatorViewModel) {
+        self.viewModel = viewModel
+    }
     
     public var body: some View {
-        NavigationStack(path: $viewModel.navigationPath) {
-            VStack() {
+//        NavigationStack(path: $viewModel.navigationPath) {
+            VStack {
                 ATUsersHomeView(viewModel: viewModel.userViewModel())
             }
             .navigationDestination(for: ATUsersScreens.self) { screen in
                 switch screen {
-                case .home:
-                    ATUsersHomeView(viewModel: viewModel.userViewModel())
-                case .postsCoordinator:
-                    ATPostsCoordinatorView(viewModel: viewModel.postsCoordinatorViewModel())
+                case .home(let homeViewModel):
+                    ATUsersHomeView(viewModel: homeViewModel)
                 }
             }
-        }
+//        }
     }
-}
-
-#Preview {
-    ATUsersCoordinatorView()
 }

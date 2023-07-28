@@ -7,7 +7,6 @@
 
 import Foundation
 
-enum ATUsersScreens {
-    case home,
-         postsCoordinator
+enum ATUsersScreens: Hashable {
+    case home(viewModel: ATUsersHomeViewModel)
 }
