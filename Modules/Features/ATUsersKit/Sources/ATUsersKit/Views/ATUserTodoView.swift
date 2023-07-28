@@ -15,8 +15,6 @@ struct ATUserTodoView: View {
     var body: some View {
         ATLoadableView(state: $viewModel.state) {
             List {
-                Label("Tasks", systemImage: "pencil")
-                    .font(.headline)
                 ForEach(viewModel.todos) { todo in
                     Label(todo.title, systemImage: todo.completed ? "checkmark.circle.fill" : "checkmark.circle")
                         .symbolEffect(.bounce, value: todo)
@@ -26,6 +24,7 @@ struct ATUserTodoView: View {
                 }
             }.listStyle(.plain)
         }
+        .navigationTitle("\(viewModel.userName ?? "Contact")'s Tasks")
         .onAppear {
             viewModel.loadData()
         }

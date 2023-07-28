@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 import Observation
 import ATUsersKit
 import ATPostsKit
@@ -18,7 +17,6 @@ class ATAppNavigationCoordinatorViewModel {
     
     var navigationPath: NavigationPath
     private let networkService: ATExampleNetworkServiceProtocol
-    private var anyCancelleables = Set<AnyCancellable>()
     
     init(navigationPath: NavigationPath = NavigationPath(),
          networkService: ATExampleNetworkServiceProtocol = ATExampleNetworkServiceInitialiser().networkService()) {
@@ -28,7 +26,12 @@ class ATAppNavigationCoordinatorViewModel {
     
     func usersCoordinatorViewModel() -> ATUsersCoordinatorViewModel {
         let viewModel = ATUsersCoordinatorViewModel(networkService: networkService,
-                                                    coordinatorDelegate: self)
+                                                    coordinatorDelegate: self,
+                                                    navigationPath: Binding(get: {
+            self.navigationPath
+        }, set: { value in
+            self.navigationPath = value
+        } ))
         return viewModel
     }
 }

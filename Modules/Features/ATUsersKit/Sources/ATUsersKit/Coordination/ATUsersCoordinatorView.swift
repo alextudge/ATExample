@@ -24,6 +24,8 @@ public struct ATUsersCoordinatorView: View {
             switch screen {
             case .home(let homeViewModel):
                 ATUsersHomeView(viewModel: homeViewModel)
+            case .tasks(let viewModel):
+                ATUserTodoView(viewModel: viewModel)
             }
         }
     }

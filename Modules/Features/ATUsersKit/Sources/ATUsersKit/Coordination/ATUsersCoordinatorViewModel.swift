@@ -23,14 +23,17 @@ public protocol ATUsersCoordinatorViewModelCoordinatorDelegate: AnyObject {
 @Observable
 public class ATUsersCoordinatorViewModel {
     
+    var navigationPath: Binding<NavigationPath>
     let networkService: ATExampleNetworkServiceProtocol
     
     private weak var coordinatorDelegate: ATUsersCoordinatorViewModelCoordinatorDelegate?
     
     public init(networkService: ATExampleNetworkServiceProtocol,
-                coordinatorDelegate: ATUsersCoordinatorViewModelCoordinatorDelegate) {
+                coordinatorDelegate: ATUsersCoordinatorViewModelCoordinatorDelegate,
+                navigationPath: Binding<NavigationPath>) {
         self.networkService = networkService
         self.coordinatorDelegate = coordinatorDelegate
+        self.navigationPath = navigationPath
     }
     
     func userViewModel() -> ATUsersHomeViewModel {
@@ -40,6 +43,11 @@ public class ATUsersCoordinatorViewModel {
 }
 
 extension ATUsersCoordinatorViewModel: ATUsersHomeViewModelCoordinatorDelegate {
+    func requestedTasks(userId: Int) {
+        navigationPath.wrappedValue.append(ATUsersScreens.tasks(viewModel: ATUserTodoViewModel(userId: userId,
+                                                                                               networkService: networkService)))
+    }
+    
     func requestedPosts(userId: Int) {
         coordinatorDelegate?.didRequestPosts(userId: userId)
     }

@@ -16,6 +16,7 @@ class ATUserTodoViewModel {
     
     var state = ATViewState.loaded
     var todos = [ATTodo]()
+    var userName: String?
     private let userId: Int
     private let networkService: ATExampleNetworkServiceProtocol
     
@@ -32,6 +33,7 @@ class ATUserTodoViewModel {
         state = .loading
         Task {
             do {
+                userName = try await networkService.request(endpoint: ATUsersEndpoint.user(id: userId), type: ATUser.self).name
                 todos = try await networkService.request(endpoint: ATUsersEndpoint.todos(userId: userId), type: [ATTodo].self)
                 state = .loaded
             } catch {
@@ -44,5 +46,15 @@ class ATUserTodoViewModel {
         if let index = todos.firstIndex(where: { $0.id == id }) {
             todos[index].toggleCompleted()
         }
+    }
+}
+
+extension ATUserTodoViewModel: Equatable, Hashable {
+    public static func == (lhs: ATUserTodoViewModel, rhs: ATUserTodoViewModel) -> Bool {
+        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+    }
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(ObjectIdentifier(self))
     }
 }

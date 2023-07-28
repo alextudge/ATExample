@@ -14,13 +14,14 @@ import Observation
 protocol ATUsersHomeViewModelCoordinatorDelegate: AnyObject {
     func requestedPosts(userId: Int)
     func requestedAlbums(userId: Int)
+    func requestedTasks(userId: Int)
 }
 
 @Observable
 class ATUsersHomeViewModel {
     
     enum UserNavigationType {
-        case posts, albums
+        case posts, albums, tasks
     }
     
     var state = ATViewState.loaded
@@ -44,7 +45,7 @@ class ATUsersHomeViewModel {
             users = try await networkService.request(endpoint: ATUsersEndpoint.users, type: [ATUser].self)
             state = .loaded
         } catch {
-            state = .error(message: "Something went wrong!")
+            state = .error(message: String(localized: "Something went wrong!"))
         }
     }
     
@@ -54,6 +55,8 @@ class ATUsersHomeViewModel {
             coordinatorDelegate?.requestedPosts(userId: userId)
         case .albums:
             coordinatorDelegate?.requestedAlbums(userId: userId)
+        case .tasks:
+            coordinatorDelegate?.requestedTasks(userId: userId)
         }
     }
 }

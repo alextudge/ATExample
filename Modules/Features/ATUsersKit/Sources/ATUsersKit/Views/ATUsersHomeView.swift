@@ -37,16 +37,17 @@ private extension ATUsersHomeView {
             VStack {
                 ATUserView(viewModel: ATUserViewModel(user: user))
                 buttons(for: user.id)
-                ATUserTodoView(viewModel: ATUserTodoViewModel(userId: user.id,
-                                                              networkService: viewModel.networkService))
             }
             .containerRelativeFrame(.horizontal)
-            .edgeFadeAnimation()
+            .edgeFadeAnimation(axis: .horizontal)
         }
     }
     
     func buttons(for userId: Int) -> some View {
         HStack {
+            Button(String(localized: "Tasks")) {
+                viewModel.view(.tasks, userId: userId)
+            }
             Button(String(localized: "Posts")) {
                 viewModel.view(.posts, userId: userId)
             }

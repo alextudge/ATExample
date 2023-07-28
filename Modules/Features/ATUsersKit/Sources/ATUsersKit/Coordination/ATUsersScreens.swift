@@ -8,5 +8,6 @@
 import Foundation
 
 enum ATUsersScreens: Hashable {
-    case home(viewModel: ATUsersHomeViewModel)
+    case home(viewModel: ATUsersHomeViewModel),
+         tasks(viewModel: ATUserTodoViewModel)
 }
