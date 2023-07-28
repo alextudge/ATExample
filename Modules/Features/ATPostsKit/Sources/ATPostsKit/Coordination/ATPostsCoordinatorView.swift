@@ -9,7 +9,7 @@ import SwiftUI
 
 public struct ATPostsCoordinatorView: View {
     
-    @Bindable private var viewModel: ATPostsCoordinatorViewModel
+    @State private var viewModel: ATPostsCoordinatorViewModel
     
     public init(viewModel: ATPostsCoordinatorViewModel) {
         self.viewModel = viewModel

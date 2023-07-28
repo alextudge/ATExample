@@ -10,7 +10,7 @@ import ATPostsKit
 
 public struct ATUsersCoordinatorView: View {
     
-    @Bindable private var viewModel: ATUsersCoordinatorViewModel
+    @State private var viewModel: ATUsersCoordinatorViewModel
     
     public init(viewModel: ATUsersCoordinatorViewModel) {
         self.viewModel = viewModel

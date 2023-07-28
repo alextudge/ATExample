@@ -36,6 +36,9 @@ class ATUsersHomeViewModel {
     }
     
     func loadData() {
+        guard users.isEmpty else {
+            return
+        }
         state = .loading
         Task {
             do {

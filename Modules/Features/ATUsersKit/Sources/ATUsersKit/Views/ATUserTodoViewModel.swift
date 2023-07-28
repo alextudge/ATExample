@@ -26,6 +26,9 @@ class ATUserTodoViewModel {
     }
     
     func loadData() {
+        guard todos.isEmpty else {
+            return
+        }
         state = .loading
         Task {
             do {

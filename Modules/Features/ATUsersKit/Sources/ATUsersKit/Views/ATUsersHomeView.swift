@@ -10,7 +10,7 @@ import ATUIKit
 
 struct ATUsersHomeView: View {
     
-    @Bindable var viewModel: ATUsersHomeViewModel
+    @State var viewModel: ATUsersHomeViewModel
     
     var body: some View {
         ATLoadableView(state: $viewModel.state) {
