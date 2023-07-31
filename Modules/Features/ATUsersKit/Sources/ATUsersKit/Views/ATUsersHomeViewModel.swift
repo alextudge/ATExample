@@ -37,9 +37,6 @@ class ATUsersHomeViewModel {
     }
     
     func loadData() async {
-        guard users.isEmpty else {
-            return
-        }
         state = .loading
         do {
             users = try await networkService.request(endpoint: ATUsersEndpoint.users, type: [ATUser].self)

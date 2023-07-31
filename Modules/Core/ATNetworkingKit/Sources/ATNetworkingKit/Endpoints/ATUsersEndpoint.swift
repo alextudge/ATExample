@@ -12,7 +12,10 @@ public enum ATUsersEndpoint: ATEndpoint {
     
     case users,
          user(id: Int),
-         todos(userId: Int)
+         todos(userId: Int),
+         userPosts(userId: Int),
+         postComments(postId: Int),
+         usersAlbums(userId: Int)
     
     public var path: String {
         switch self {
@@ -22,6 +25,12 @@ public enum ATUsersEndpoint: ATEndpoint {
             return "/users/\(id)"
         case .todos(let userId):
             return "/users/\(userId)/todos"
+        case .userPosts(let userId):
+            return "/users/\(userId)/posts"
+        case .postComments(let postId):
+            return "/posts/\(postId)/comments"
+        case .usersAlbums(let userId):
+            return "/users/\(userId)/albums"
         }
     }
     

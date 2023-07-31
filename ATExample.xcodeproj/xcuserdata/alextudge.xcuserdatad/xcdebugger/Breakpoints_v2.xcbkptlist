@@ -25,53 +25,5 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2E61C7D4-126C-4220-A92A-51676234AEC2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Modules/Features/ATUsersKit/Sources/ATUsersKit/Coordination/ATUsersCoordinatorView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "2E61C7D4-126C-4220-A92A-51676234AEC2 - 1d129aa2f1d755d7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (ATUsersKit.ATUsersScreens) -&gt; SwiftUI._ConditionalContent&lt;ATUsersKit.ATUsersHomeView, ATUsersKit.ATUserTodoView&gt; in ATUsersKit.ATUsersCoordinatorView.body.getter : some"
-                  moduleName = "ATExample"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alextudge/Documents/GitHub/ATExample/Modules/Features/ATUsersKit/Sources/ATUsersKit/Coordination/ATUsersCoordinatorView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "140">
-               </Location>
-               <Location
-                  uuid = "2E61C7D4-126C-4220-A92A-51676234AEC2 - 1d129aa2f1d755d7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (ATUsersKit.ATUsersScreens) -&gt; SwiftUI._ConditionalContent&lt;ATUsersKit.ATUsersHomeView, ATUsersKit.ATUserTodoView&gt; in ATUsersKit.ATUsersCoordinatorView.body.getter : some"
-                  moduleName = "ATExample"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alextudge/Documents/GitHub/ATExample/Modules/Features/ATUsersKit/Sources/ATUsersKit/Coordination/ATUsersCoordinatorView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "25"
-                  endingLineNumber = "25"
-                  offsetFromSymbolStart = "168">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

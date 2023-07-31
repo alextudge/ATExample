@@ -9,20 +9,20 @@ import SwiftUI
 
 public struct ATPostsCoordinatorView: View {
     
-    @State private var viewModel: ATPostsCoordinatorViewModel
+    @State private var coordinatorViewModel: ATPostsCoordinatorViewModel
     
     public init(viewModel: ATPostsCoordinatorViewModel) {
-        self.viewModel = viewModel
+        self.coordinatorViewModel = viewModel
     }
     
     public var body: some View {
         VStack {
-            ATPostsView()
+            ATPostsView(viewModel: coordinatorViewModel.postsViewModel())
         }
         .navigationDestination(for: ATPostsScreens.self) { screen in
             switch screen {
-            case .posts:
-                ATPostsView()
+            case .posts(let viewModel):
+                ATPostsView(viewModel: viewModel)
             }
         }
     }

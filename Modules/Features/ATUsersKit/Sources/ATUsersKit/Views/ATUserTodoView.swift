@@ -15,14 +15,15 @@ struct ATUserTodoView: View {
     var body: some View {
         ATLoadableView(state: $viewModel.state) {
             List {
-                ForEach(viewModel.todos) { todo in
+                ForEach(viewModel.uncompletedTodos) { todo in
                     Label(todo.title, systemImage: todo.completed ? "checkmark.circle.fill" : "checkmark.circle")
                         .symbolEffect(.bounce, value: todo)
                         .onTapGesture {
                             viewModel.didTap(todo: todo.id)
                         }
                 }
-            }.listStyle(.plain)
+            }
+            .animation(.default, value: viewModel.todos)
         }
         .navigationTitle("\(viewModel.userName ?? "Contact")'s Tasks")
         .onAppear {

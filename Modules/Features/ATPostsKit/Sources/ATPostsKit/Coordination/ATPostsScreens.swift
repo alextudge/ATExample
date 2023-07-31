@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum ATPostsScreens {
-    case posts
+enum ATPostsScreens: Hashable {
+    case posts(viewModel: ATPostsViewModel)
 }

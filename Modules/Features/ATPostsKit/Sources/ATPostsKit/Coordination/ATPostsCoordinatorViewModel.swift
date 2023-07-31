@@ -23,17 +23,24 @@ public protocol ATPostsCoordinatorViewModelCoordinatorDelegate: AnyObject {
 public class ATPostsCoordinatorViewModel {
     
     private let networkService: ATExampleNetworkServiceProtocol
+    private let userId: Int
     
     private weak var coordinatorDelegate: ATPostsCoordinatorViewModelCoordinatorDelegate?
     
     public init(networkService: ATExampleNetworkServiceProtocol,
-                coordinatorDelegate: ATPostsCoordinatorViewModelCoordinatorDelegate) {
+                coordinatorDelegate: ATPostsCoordinatorViewModelCoordinatorDelegate,
+                userId: Int) {
         self.networkService = networkService
         self.coordinatorDelegate = coordinatorDelegate
+        self.userId = userId
     }
     
     func didTapClose() {
         coordinatorDelegate?.postsFlowDidFinish()
+    }
+    
+    func postsViewModel() -> ATPostsViewModel {
+        ATPostsViewModel(networkService: networkService, userId: userId)
     }
 }
 

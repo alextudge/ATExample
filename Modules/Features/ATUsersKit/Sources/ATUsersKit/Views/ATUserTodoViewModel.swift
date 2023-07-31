@@ -19,6 +19,9 @@ class ATUserTodoViewModel {
     var userName: String?
     private let userId: Int
     private let networkService: ATExampleNetworkServiceProtocol
+    var uncompletedTodos: [ATTodo] {
+        todos.filter { !$0.completed }
+    }
     
     init(userId: Int,
          networkService: ATExampleNetworkServiceProtocol) {
@@ -27,14 +30,12 @@ class ATUserTodoViewModel {
     }
     
     func loadData() {
-        guard todos.isEmpty else {
-            return
-        }
         state = .loading
         Task {
             do {
                 userName = try await networkService.request(endpoint: ATUsersEndpoint.user(id: userId), type: ATUser.self).name
                 todos = try await networkService.request(endpoint: ATUsersEndpoint.todos(userId: userId), type: [ATTodo].self)
+                    .sorted(by: { $1.completed != $0.completed })
                 state = .loaded
             } catch {
                 state = .error(message: "Something went wrong!")

@@ -37,9 +37,10 @@ class ATAppNavigationCoordinatorViewModel {
 }
 
 private extension ATAppNavigationCoordinatorViewModel {
-    func postsCoordinatorViewModel() -> ATPostsCoordinatorViewModel {
+    func postsCoordinatorViewModel(userId: Int) -> ATPostsCoordinatorViewModel {
         let viewModel = ATPostsCoordinatorViewModel(networkService: networkService,
-                                                    coordinatorDelegate: self)
+                                                    coordinatorDelegate: self,
+                                                    userId: userId)
         return viewModel
     }
 }
@@ -50,7 +51,7 @@ extension ATAppNavigationCoordinatorViewModel: ATUsersCoordinatorViewModelCoordi
     }
     
     func didRequestPosts(userId: Int) {
-        navigationPath.append(ATAppNavigationFlows.posts(viewModel: postsCoordinatorViewModel()))
+        navigationPath.append(ATAppNavigationFlows.posts(viewModel: postsCoordinatorViewModel(userId: userId)))
     }
 }
 
