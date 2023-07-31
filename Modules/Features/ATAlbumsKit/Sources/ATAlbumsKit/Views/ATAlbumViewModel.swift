@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 import Observation
 import ATInterfacesKit
 import ATDataModel
@@ -19,7 +18,7 @@ public class ATAlbumViewModel {
     private let networkService: ATExampleNetworkServiceProtocol
     private let album: ATAlbum
     var photos = [ATPhoto]()
-        
+    
     public init(networkService: ATExampleNetworkServiceProtocol,
                 album: ATAlbum) {
         self.networkService = networkService
@@ -30,6 +29,7 @@ public class ATAlbumViewModel {
         state = .loading
         do {
             photos = try await networkService.request(endpoint: ATUsersEndpoint.photos(albumId: album.id), type: [ATPhoto].self)
+            state = .loaded
         } catch {
             state = .error(message: "!")
         }

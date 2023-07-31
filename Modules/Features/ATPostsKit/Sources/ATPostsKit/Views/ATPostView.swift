@@ -7,15 +7,10 @@
 
 import SwiftUI
 import ATUIKit
-import ATUIKit
 
 struct ATPostView: View {
     
     @State var viewModel: ATPostViewModel
-    
-    public init(viewModel: ATPostViewModel) {
-        self.viewModel = viewModel
-    }
     
     var body: some View {
         ATLoadableView(state: $viewModel.state) {

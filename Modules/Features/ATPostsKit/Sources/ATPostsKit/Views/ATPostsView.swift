@@ -12,10 +12,6 @@ struct ATPostsView: View {
     
     @State var viewModel: ATPostsViewModel
     
-    public init(viewModel: ATPostsViewModel) {
-        self.viewModel = viewModel
-    }
-    
     var body: some View {
         ATLoadableView(state: $viewModel.state) {
             ScrollView(.vertical) {

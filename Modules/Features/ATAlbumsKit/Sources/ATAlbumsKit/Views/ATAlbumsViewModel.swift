@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 import Observation
 import ATInterfacesKit
 import ATDataModel
@@ -16,7 +15,7 @@ import ATNetworkingKit
 public class ATAlbumsViewModel {
     
     var state = ATViewState.loaded
-    private let networkService: ATExampleNetworkServiceProtocol
+    let networkService: ATExampleNetworkServiceProtocol
     private let userId: Int
     private(set) var albums = [ATAlbum]()
         

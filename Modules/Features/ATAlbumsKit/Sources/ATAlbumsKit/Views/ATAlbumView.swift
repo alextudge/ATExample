@@ -12,13 +12,21 @@ public struct ATAlbumView: View {
     
     @State var viewModel: ATAlbumViewModel
     
-    public init(viewModel: ATAlbumViewModel) {
-        self.viewModel = viewModel
-    }
-    
     public var body: some View {
         ATLoadableView(state: $viewModel.state) {
-            
+            ScrollView(.horizontal) {
+                LazyHStack {
+                    ForEach(viewModel.photos) { photo in
+                        AsyncImage(url: URL(string: photo.url)!, content: { image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        }, placeholder: {
+                            ProgressView()
+                        }).frame(width: 100, height: 100)
+                    }
+                }
+            }
         }
         .navigationTitle(String(localized: "Albums"))
         .task {

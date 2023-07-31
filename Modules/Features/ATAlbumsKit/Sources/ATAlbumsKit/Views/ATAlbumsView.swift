@@ -12,15 +12,14 @@ public struct ATAlbumsView: View {
     
     @State var viewModel: ATAlbumsViewModel
     
-    public init(viewModel: ATAlbumsViewModel) {
-        self.viewModel = viewModel
-    }
-    
     public var body: some View {
         ATLoadableView(state: $viewModel.state) {
             List {
-                ForEach(viewModel.albums) {
-                    Text($0.title)
+                ForEach(viewModel.albums) { album in
+                    VStack {
+                        Text(album.title)
+                        ATAlbumView(viewModel: ATAlbumViewModel(networkService: viewModel.networkService, album: album))
+                    }
                 }
             }
         }
