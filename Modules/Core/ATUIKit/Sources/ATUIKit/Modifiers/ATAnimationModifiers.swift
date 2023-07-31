@@ -16,4 +16,12 @@ public extension View {
                 .blur(radius: phase.isIdentity ? 0 : 2)
         }
     }
+    
+    func roundedContainer(_ colour: Color) -> some View {
+        self
+            .padding()
+            .containerRelativeFrame(.horizontal)
+            .background(colour)
+            .cornerRadius(15)
+    }
 }

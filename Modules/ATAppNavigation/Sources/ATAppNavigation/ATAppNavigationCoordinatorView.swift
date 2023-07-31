@@ -8,6 +8,7 @@
 import SwiftUI
 import ATUsersKit
 import ATPostsKit
+import ATAlbumsKit
 
 public struct ATAppNavigationCoordinatorView: View {
     
@@ -26,6 +27,8 @@ public struct ATAppNavigationCoordinatorView: View {
                     ATUsersCoordinatorView(viewModel: viewModel)
                 case .posts(let viewModel):
                     ATPostsCoordinatorView(viewModel: viewModel)
+                case .albums(let viewModel):
+                    ATAlbumCoordinatorView(viewModel: viewModel)
                 }
             }
         }

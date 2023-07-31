@@ -7,6 +7,7 @@
 
 import SwiftUI
 import ATUIKit
+import ATUIKit
 
 struct ATPostView: View {
     
@@ -19,10 +20,7 @@ struct ATPostView: View {
     var body: some View {
         ATLoadableView(state: $viewModel.state) {
             Text(viewModel.post.title)
-                .padding()
-                .containerRelativeFrame(.horizontal)
-                .background(.quaternary)
-                .cornerRadius(15)
+                .roundedContainer(Color.green)
             Button {
                 viewModel.showingComments.toggle()
             } label: {
@@ -35,10 +33,7 @@ struct ATPostView: View {
                         Text(comment.email)
                             .font(.footnote)
                     }
-                    .padding()
-                    .containerRelativeFrame(.horizontal)
-                    .background(.secondary)
-                    .cornerRadius(15)
+                    .roundedContainer(Color.mint)
                 }
             }
         }

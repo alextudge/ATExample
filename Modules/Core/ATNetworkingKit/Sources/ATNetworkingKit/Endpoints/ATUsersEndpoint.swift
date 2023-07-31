@@ -15,7 +15,8 @@ public enum ATUsersEndpoint: ATEndpoint {
          todos(userId: Int),
          userPosts(userId: Int),
          postComments(postId: Int),
-         usersAlbums(userId: Int)
+         usersAlbums(userId: Int),
+         photos(albumId: Int)
     
     public var path: String {
         switch self {
@@ -31,6 +32,8 @@ public enum ATUsersEndpoint: ATEndpoint {
             return "/posts/\(postId)/comments"
         case .usersAlbums(let userId):
             return "/users/\(userId)/albums"
+        case .photos(let albumId):
+            return "/albums/\(albumId)/photos"
         }
     }
     

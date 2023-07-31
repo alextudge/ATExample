@@ -9,6 +9,7 @@ import SwiftUI
 import Observation
 import ATUsersKit
 import ATPostsKit
+import ATAlbumsKit
 import ATInterfacesKit
 import ATNetworkingKit
 
@@ -43,11 +44,17 @@ private extension ATAppNavigationCoordinatorViewModel {
                                                     userId: userId)
         return viewModel
     }
+    
+    func albumsCoordinatorViewModel(userId: Int) -> ATAlbumCoordinatorViewModel {
+        let viewModel = ATAlbumCoordinatorViewModel(networkService: networkService,
+                                                    userId: userId)
+        return viewModel
+    }
 }
 
 extension ATAppNavigationCoordinatorViewModel: ATUsersCoordinatorViewModelCoordinatorDelegate {
     func didRequestAlbums(userId: Int) {
-        return
+        navigationPath.append(ATAppNavigationFlows.albums(viewModel: albumsCoordinatorViewModel(userId: userId)))
     }
     
     func didRequestPosts(userId: Int) {

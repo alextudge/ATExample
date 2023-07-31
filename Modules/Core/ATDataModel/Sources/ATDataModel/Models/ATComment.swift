@@ -1,5 +1,5 @@
 //
-//  ATPost.swift
+//  ATComment.swift
 //
 //
 //  Created by Alex Tudge on 27/07/2023.
@@ -7,9 +7,10 @@
 
 import Foundation
 
-public struct ATPost: Decodable, Identifiable, Equatable {
-    public let userId: Int
+public struct ATComment: Decodable, Identifiable, Equatable {
+    public let postId: Int
     public let id: Int
-    public let title: String
+    public let name: String
+    public let email: String
     public var body: String
 }

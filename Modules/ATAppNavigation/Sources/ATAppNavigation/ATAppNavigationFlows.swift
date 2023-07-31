@@ -7,8 +7,10 @@
 
 import ATUsersKit
 import ATPostsKit
+import ATAlbumsKit
 
 enum ATAppNavigationFlows: Hashable {
     case users(viewModel: ATUsersCoordinatorViewModel),
-         posts(viewModel: ATPostsCoordinatorViewModel)
+         posts(viewModel: ATPostsCoordinatorViewModel),
+         albums(viewModel: ATAlbumCoordinatorViewModel)
 }

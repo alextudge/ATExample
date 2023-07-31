@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ATUIKit
 
 struct ATUserView: View {
     
@@ -29,9 +30,6 @@ struct ATUserView: View {
             }
             Spacer()
         }
-        .padding()
-        .frame(maxWidth: .infinity)
-        .background(.indigo)
-        .clipShape(.rect(cornerRadius: 20))
+        .roundedContainer(Color.indigo)
     }
 }

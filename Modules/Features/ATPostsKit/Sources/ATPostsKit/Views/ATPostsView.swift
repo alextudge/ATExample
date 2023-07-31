@@ -24,7 +24,7 @@ struct ATPostsView: View {
                         ATPostView(viewModel: ATPostViewModel(networkService: viewModel.networkService, post: post))
                     }
                 }
-            }.padding()
+            }.padding(.horizontal)
         }
         .navigationTitle(String(localized: "Posts"))
         .task {
