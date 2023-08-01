@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ATInterfacesKit
 
 public enum ATViewState: Equatable {
     case loading,
