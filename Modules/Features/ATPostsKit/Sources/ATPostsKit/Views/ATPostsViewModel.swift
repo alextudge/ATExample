@@ -17,8 +17,8 @@ import ATNetworkingKit
 public class ATPostsViewModel {
     
     let networkService: ATExampleNetworkServiceProtocol
-    private let userId: Int
     var state = ATViewState.loaded
+    private let userId: Int
     private(set) var posts = [ATPost]()
     
     public init(networkService: ATExampleNetworkServiceProtocol,

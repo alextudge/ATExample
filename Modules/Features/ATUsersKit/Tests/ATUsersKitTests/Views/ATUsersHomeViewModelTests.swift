@@ -48,7 +48,7 @@ extension ATUsersHomeViewModelTests {
     
     func test_loadData_networkServiceSuccess() async {
         // Given
-        networkServiceMock.object = [user(), user()]
+        networkServiceMock.object.append([user(), user()])
         
         // When
         await sut.loadData()

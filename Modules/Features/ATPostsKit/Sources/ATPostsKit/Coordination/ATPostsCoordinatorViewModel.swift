@@ -20,7 +20,7 @@ public protocol ATPostsCoordinatorViewModelCoordinatorDelegate: AnyObject {
 }
 
 @Observable
-public class ATPostsCoordinatorViewModel {
+public class ATPostsCoordinatorViewModel: ATCoordinatorViewModel {
     
     private let networkService: ATExampleNetworkServiceProtocol
     private let userId: Int
@@ -41,15 +41,5 @@ public class ATPostsCoordinatorViewModel {
     
     func postsViewModel() -> ATPostsViewModel {
         ATPostsViewModel(networkService: networkService, userId: userId)
-    }
-}
-
-extension ATPostsCoordinatorViewModel: Equatable, Hashable {
-    public static func == (lhs: ATPostsCoordinatorViewModel, rhs: ATPostsCoordinatorViewModel) -> Bool {
-        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(ObjectIdentifier(self))
     }
 }

@@ -16,8 +16,8 @@ final class ATUserNavigationOptionsTests: XCTestCase {
     }
     
     func test_systemImages() {
-        XCTAssertEqual(ATUserNavigationOptions.albums.icon, "Albums")
-        XCTAssertEqual(ATUserNavigationOptions.posts.icon, "Albums")
-        XCTAssertEqual(ATUserNavigationOptions.tasks.icon, "Albums")
+        XCTAssertEqual(ATUserNavigationOptions.albums.icon, "photo.on.rectangle")
+        XCTAssertEqual(ATUserNavigationOptions.posts.icon, "signpost.right")
+        XCTAssertEqual(ATUserNavigationOptions.tasks.icon, "checkmark.circle")
     }
 }
