@@ -31,7 +31,6 @@ public class ATPostsViewModel {
         state = .loading
         do {
             posts = try await networkService.request(endpoint: ATUsersEndpoint.userPosts(userId: userId), type: [ATPost].self)
-            sleep(2)
             state = .loaded
         } catch {
             state = .error(message: String(localized: "Something went wrong!"))
