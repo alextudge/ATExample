@@ -9,12 +9,13 @@ import SwiftUI
 
 public extension View {
     func edgeFadeAnimation(axis: Axis) -> some View {
-        self.scrollTransition(.animated.threshold(.visible(0.9)), axis: axis) { content, phase in
-            content
-                .opacity(phase.isIdentity ? 1 : 0.75)
-                .scaleEffect(phase.isIdentity ? 1 : 0.9)
-                .blur(radius: phase.isIdentity ? 0 : 2)
-        }
+        self
+            .scrollTransition(.animated.threshold(.visible(0.9)), axis: axis) { content, phase in
+                content
+                    .opacity(phase.isIdentity ? 1 : 0.75)
+                    .scaleEffect(phase.isIdentity ? 1 : 0.9)
+                    .blur(radius: phase.isIdentity ? 0 : 2)
+            }
     }
     
     func roundedContainer(_ colour: Color) -> some View {

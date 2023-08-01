@@ -21,10 +21,10 @@ public protocol ATUsersCoordinatorViewModelCoordinatorDelegate: AnyObject {
 }
 
 @Observable
-public class ATUsersCoordinatorViewModel {
+public class ATUsersCoordinatorViewModel: ATCoordinatorViewModel {
     
     var navigationPath: Binding<NavigationPath>
-    let networkService: ATExampleNetworkServiceProtocol
+    private let networkService: ATExampleNetworkServiceProtocol
     
     private weak var coordinatorDelegate: ATUsersCoordinatorViewModelCoordinatorDelegate?
     
@@ -43,26 +43,15 @@ public class ATUsersCoordinatorViewModel {
 }
 
 extension ATUsersCoordinatorViewModel: ATUsersHomeViewModelCoordinatorDelegate {
-    func requestedTasks(userId: Int) {
-        navigationPath.wrappedValue.append(ATUsersScreens.tasks(viewModel: ATUserTodoViewModel(userId: userId,
-                                                                                               networkService: networkService)))
-    }
-    
-    func requestedPosts(userId: Int) {
-        coordinatorDelegate?.didRequestPosts(userId: userId)
-    }
-    
-    func requestedAlbums(userId: Int) {
-        coordinatorDelegate?.didRequestAlbums(userId: userId)
-    }
-}
-
-extension ATUsersCoordinatorViewModel: Equatable, Hashable {
-    public static func == (lhs: ATUsersCoordinatorViewModel, rhs: ATUsersCoordinatorViewModel) -> Bool {
-        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(ObjectIdentifier(self))
+    func requested(view type: ATUserNavigationOptions, userId: Int) {
+        switch type {
+        case .posts:
+            coordinatorDelegate?.didRequestPosts(userId: userId)
+        case .albums:
+            coordinatorDelegate?.didRequestAlbums(userId: userId)
+        case .tasks:
+            navigationPath.wrappedValue.append(ATUsersScreens.tasks(viewModel: ATUserTodoViewModel(userId: userId,
+                                                                                                   networkService: networkService)))
+        }
     }
 }

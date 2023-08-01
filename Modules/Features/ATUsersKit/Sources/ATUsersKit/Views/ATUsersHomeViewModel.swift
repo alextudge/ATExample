@@ -6,23 +6,18 @@
 //
 
 import Foundation
+import ATUIKit
 import ATInterfacesKit
 import ATDataModel
 import ATNetworkingKit
 import Observation
 
 protocol ATUsersHomeViewModelCoordinatorDelegate: AnyObject {
-    func requestedPosts(userId: Int)
-    func requestedAlbums(userId: Int)
-    func requestedTasks(userId: Int)
+    func requested(view type: ATUserNavigationOptions, userId: Int)
 }
 
 @Observable
-class ATUsersHomeViewModel {
-    
-    enum UserNavigationType {
-        case posts, albums, tasks
-    }
+class ATUsersHomeViewModel: ATCoordinatorViewModel {
     
     var state = ATViewState.loaded
     private(set) var users = [ATUser]()
@@ -46,24 +41,7 @@ class ATUsersHomeViewModel {
         }
     }
     
-    func view(_ type: UserNavigationType, userId: Int) {
-        switch type {
-        case .posts:
-            coordinatorDelegate?.requestedPosts(userId: userId)
-        case .albums:
-            coordinatorDelegate?.requestedAlbums(userId: userId)
-        case .tasks:
-            coordinatorDelegate?.requestedTasks(userId: userId)
-        }
-    }
-}
-
-extension ATUsersHomeViewModel: Equatable, Hashable {
-    public static func == (lhs: ATUsersHomeViewModel, rhs: ATUsersHomeViewModel) -> Bool {
-        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(ObjectIdentifier(self))
+    func view(_ type: ATUserNavigationOptions, userId: Int) {
+        coordinatorDelegate?.requested(view: type, userId: userId)
     }
 }

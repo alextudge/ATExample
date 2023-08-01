@@ -8,6 +8,12 @@
 import SwiftUI
 import ATInterfacesKit
 
+public enum ATViewState: Equatable {
+    case loading,
+         error(message: String?),
+         loaded
+}
+
 public struct ATLoadableView<Content>: View where Content: View {
     
     @Binding var state: ATViewState
@@ -20,13 +26,16 @@ public struct ATLoadableView<Content>: View where Content: View {
     }
     
     public var body: some View {
-        switch state {
-        case .loading:
-            ProgressView()
-        case .error(let message):
-            Text(message)
-        case .loaded:
-            content
+        Group {
+            switch state {
+            case .loading:
+                ProgressView()
+            case .error(let message):
+                Text(message ?? String(localized: "Something went wrong!"))
+            case .loaded:
+                content
+            }
         }
+        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 0.25)))
     }
 }

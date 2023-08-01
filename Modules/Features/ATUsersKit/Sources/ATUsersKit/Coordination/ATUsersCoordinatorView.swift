@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import ATPostsKit
 
 public struct ATUsersCoordinatorView: View {
     

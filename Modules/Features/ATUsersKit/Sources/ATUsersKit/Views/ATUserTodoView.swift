@@ -26,8 +26,8 @@ struct ATUserTodoView: View {
             .animation(.default, value: viewModel.todos)
         }
         .navigationTitle("\(viewModel.userName ?? "Contact")'s Tasks")
-        .onAppear {
-            viewModel.loadData()
+        .task {
+            await viewModel.loadData()
         }
     }
 }

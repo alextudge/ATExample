@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import ATUIKit
 import ATInterfacesKit
 import ATDataModel
 import ATNetworkingKit
 import Observation
 
 @Observable
-class ATUserTodoViewModel {
+class ATUserTodoViewModel: ATCoordinatorViewModel {
     
     var state = ATViewState.loaded
     var todos = [ATTodo]()
@@ -29,17 +30,15 @@ class ATUserTodoViewModel {
         self.networkService = networkService
     }
     
-    func loadData() {
+    func loadData() async {
         state = .loading
-        Task {
-            do {
-                userName = try await networkService.request(endpoint: ATUsersEndpoint.user(id: userId), type: ATUser.self).name
-                todos = try await networkService.request(endpoint: ATUsersEndpoint.todos(userId: userId), type: [ATTodo].self)
-                    .sorted(by: { $1.completed != $0.completed })
-                state = .loaded
-            } catch {
-                state = .error(message: "Something went wrong!")
-            }
+        do {
+            userName = try await networkService.request(endpoint: ATUsersEndpoint.user(id: userId), type: ATUser.self).name
+            todos = try await networkService.request(endpoint: ATUsersEndpoint.todos(userId: userId), type: [ATTodo].self)
+                .sorted(by: { $1.completed != $0.completed })
+            state = .loaded
+        } catch {
+            state = .error(message: "Something went wrong!")
         }
     }
     
@@ -47,15 +46,5 @@ class ATUserTodoViewModel {
         if let index = todos.firstIndex(where: { $0.id == id }) {
             todos[index].toggleCompleted()
         }
-    }
-}
-
-extension ATUserTodoViewModel: Equatable, Hashable {
-    public static func == (lhs: ATUserTodoViewModel, rhs: ATUserTodoViewModel) -> Bool {
-        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(ObjectIdentifier(self))
     }
 }

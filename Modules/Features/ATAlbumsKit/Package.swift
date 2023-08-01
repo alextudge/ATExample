@@ -17,18 +17,19 @@ let package = Package(
     dependencies: [
         .package(path: "../ATInterfacesKit"),
         .package(path: "../ATNetworkingKit"),
-        .package(path: "../ATDataModel")
+        .package(path: "../ATDataModel"),
+        .package(path: "../ATUIKit")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "ATAlbumsKit",
-            dependencies: ["ATInterfacesKit", "ATNetworkingKit", "ATDataModel"]
+            dependencies: ["ATInterfacesKit", "ATNetworkingKit", "ATDataModel", "ATUIKit"]
         ),
         .testTarget(
             name: "ATAlbumsKitTests",
-            dependencies: ["ATAlbumsKit", "ATInterfacesKit", "ATNetworkingKit", "ATDataModel"]
+            dependencies: ["ATAlbumsKit", "ATInterfacesKit", "ATNetworkingKit", "ATDataModel", "ATUIKit"]
         ),
     ]
 )

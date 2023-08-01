@@ -45,16 +45,14 @@ private extension ATUsersHomeView {
     
     func buttons(for userId: Int) -> some View {
         HStack {
-            Button(String(localized: "Tasks")) {
-                viewModel.view(.tasks, userId: userId)
-            }
-            Button(String(localized: "Posts")) {
-                viewModel.view(.posts, userId: userId)
-            }
-            Button(String(localized: "Albums")) {
-                viewModel.view(.albums, userId: userId)
+            ForEach(ATUserNavigationOptions.allCases, id: \.self) { option in
+                Button {
+                    viewModel.view(option, userId: userId)
+                } label: {
+                    Label(option.title, systemImage: option.icon)
+                }
             }
         }
-        .buttonStyle(.bordered)
+        .buttonStyle(ATButtonStyle())
     }
 }

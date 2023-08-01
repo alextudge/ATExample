@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import ATUsersKit
 
 final class ATUsersCoordinatorViewModelTests: XCTestCase {
@@ -13,12 +14,20 @@ final class ATUsersCoordinatorViewModelTests: XCTestCase {
     var sut: ATUsersCoordinatorViewModel!
     var coordinatorDelegateMock: ATUsersCoordinatorViewModelCoordinatorDelegateMock!
     var networkMock: ATExampleNetworkServiceMock!
+    var navigationPath: NavigationPath!
     
     override func setUp() {
         super.setUp()
+        navigationPath = NavigationPath()
         coordinatorDelegateMock = ATUsersCoordinatorViewModelCoordinatorDelegateMock()
         networkMock = ATExampleNetworkServiceMock()
-        sut = ATUsersCoordinatorViewModel(networkService: networkMock, coordinatorDelegate: coordinatorDelegateMock)
+        sut = ATUsersCoordinatorViewModel(networkService: networkMock,
+                                          coordinatorDelegate: coordinatorDelegateMock,
+                                          navigationPath: Binding(get: {
+            self.navigationPath
+        }, set: { value in
+            self.navigationPath = value
+        }))
     }
     
     override func tearDown() {
@@ -33,7 +42,7 @@ final class ATUsersCoordinatorViewModelTests: XCTestCase {
 extension ATUsersCoordinatorViewModelTests {
     func test_requestedPosts_notifiesCoordinatorDelegate() {
         // When
-        sut.requestedPosts(userId: 7)
+        sut.requested(view: .posts, userId: 7)
         
         // Then
         XCTAssertEqual(coordinatorDelegateMock.didRequestPostsValue, 7)
@@ -41,9 +50,17 @@ extension ATUsersCoordinatorViewModelTests {
     
     func test_requestedAlbums_notifiesCoordinatorDelegate() {
         // When
-        sut.requestedAlbums(userId: 7)
+        sut.requested(view: .albums, userId: 7)
         
         // Then
         XCTAssertEqual(coordinatorDelegateMock.didRequestAlbumsValue, 7)
+    }
+    
+    func testRequestedTasks_addsToNavigationPath() {
+        // When
+        sut.requested(view: .tasks, userId: 7)
+        
+        // Then
+        XCTAssertEqual(sut.navigationPath.wrappedValue.count, 1)
     }
 }

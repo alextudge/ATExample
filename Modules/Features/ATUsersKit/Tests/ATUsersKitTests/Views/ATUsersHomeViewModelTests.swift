@@ -11,6 +11,7 @@ import XCTest
 
 final class ATUsersHomeViewModelTests: XCTestCase {
     
+    private let userId = 1
     var sut: ATUsersHomeViewModel!
     var coordinatorMock: ATUsersHomeViewModelCoordinatorDelegateMock!
     var networkServiceMock: ATExampleNetworkServiceMock!
@@ -66,18 +67,26 @@ extension ATUsersHomeViewModelTests {
     
     func test_view_posts() {
         // When
-        sut.view(.posts, userId: 3)
+        sut.view(.posts, userId: userId)
         
         // Then
-        XCTAssertEqual(coordinatorMock.requestedPostsValue, 3)
+        XCTAssertEqual(coordinatorMock.requestedPostsValue, userId)
     }
     
     func test_view_albums() {
         // When
-        sut.view(.albums, userId: 4)
+        sut.view(.albums, userId: userId)
         
         // Then
-        XCTAssertEqual(coordinatorMock.requestedAlbumsValue, 4)
+        XCTAssertEqual(coordinatorMock.requestedAlbumsValue, userId)
+    }
+    
+    func test_view_tasks() {
+        // When
+        sut.view(.tasks, userId: userId)
+        
+        // Then
+        XCTAssertEqual(coordinatorMock.requestedTasksValue, userId)
     }
 }
 

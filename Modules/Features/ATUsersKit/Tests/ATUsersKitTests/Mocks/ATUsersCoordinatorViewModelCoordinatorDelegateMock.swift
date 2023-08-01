@@ -12,12 +12,16 @@ class ATUsersHomeViewModelCoordinatorDelegateMock: ATUsersHomeViewModelCoordinat
     
     var requestedPostsValue: Int?
     var requestedAlbumsValue: Int?
+    var requestedTasksValue: Int?
     
-    func requestedPosts(userId: Int) {
-        requestedPostsValue = userId
-    }
-    
-    func requestedAlbums(userId: Int) {
-        requestedAlbumsValue = userId
+    func requested(view type: ATUsersKit.ATUserNavigationOptions, userId: Int) {
+        switch type {
+        case .albums:
+            requestedAlbumsValue = userId
+        case .posts:
+            requestedPostsValue = userId
+        case .tasks:
+            requestedTasksValue = userId
+        }
     }
 }
