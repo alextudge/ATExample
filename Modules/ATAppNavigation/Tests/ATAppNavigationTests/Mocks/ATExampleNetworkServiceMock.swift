@@ -24,4 +24,17 @@ class ATExampleNetworkServiceMock: ATExampleNetworkServiceProtocol {
     func request<T>(endpoint: ATNetworking.ATEndpoint, type: T.Type) async throws -> T where T : Decodable {
         throw ATError.invalidUrl
     }
+    
+    func request(endpoint: ATNetworking.ATEndpoint, completion: @escaping (Result<Data, ATNetworking.ATError>) -> Void) {
+        completion(.failure(ATError.invalidUrl))
+    }
+    
+    func request(endpoint: ATNetworking.ATEndpoint) -> AnyPublisher<Data, ATNetworking.ATError> {
+        Fail(error: ATError.invalidUrl)
+            .eraseToAnyPublisher()
+    }
+    
+    func request(endpoint: ATNetworking.ATEndpoint) async throws -> Data {
+        throw ATError.invalidUrl
+    }
 }

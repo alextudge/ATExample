@@ -41,4 +41,31 @@ class ATExampleNetworkServiceMock: ATExampleNetworkServiceProtocol {
             throw error ?? ATError.invalidUrl
         }
     }
+    
+    func request(endpoint: ATNetworking.ATEndpoint, completion: @escaping (Result<Data, ATNetworking.ATError>) -> Void) {
+        if let object = object.first(where: { $0 is Data }) as? Data {
+            completion(.success(object))
+        } else {
+            completion(.failure(error ?? ATError.unauthorised))
+        }
+    }
+    
+    func request(endpoint: ATNetworking.ATEndpoint) -> AnyPublisher<Data, ATNetworking.ATError> {
+        if let object = object.first(where: { $0 is Data }) as? Data {
+            return Just(object)
+                .setFailureType(to: ATError.self)
+                .eraseToAnyPublisher()
+        } else {
+            return Fail(error: error ?? ATError.invalidUrl)
+                .eraseToAnyPublisher()
+        }
+    }
+    
+    func request(endpoint: ATNetworking.ATEndpoint) async throws -> Data {
+        if let object = object.first(where: { $0 is Data }) as? Data {
+            return object
+        } else {
+            throw error ?? ATError.invalidUrl
+        }
+    }
 }

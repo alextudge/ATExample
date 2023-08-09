@@ -80,6 +80,13 @@
         "identifier" : "ATAppNavigationTests",
         "name" : "ATAppNavigationTests"
       }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Modules\/Features\/ATAlbumsKit",
+        "identifier" : "ATAlbumsKitTests",
+        "name" : "ATAlbumsKitTests"
+      }
     }
   ],
   "version" : 1
