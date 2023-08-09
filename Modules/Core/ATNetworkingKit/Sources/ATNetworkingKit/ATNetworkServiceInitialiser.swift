@@ -15,6 +15,6 @@ public class ATExampleNetworkServiceInitialiser {
     public init() {}
         
     public func networkService() -> ATNetworkServiceProtocol {
-        ATNetworkingInitialiser().generateNetworkService()
+        ATNetworkingInitialiser().generateNetworkService(session: .shared)
     }
 }
