@@ -12,7 +12,7 @@ import ATInterfacesKit
 import ATNetworkingKit
 
 @Observable
-public class ATAlbumCoordinatorViewModel {
+public class ATAlbumCoordinatorViewModel: ATCoordinatorViewModel {
     
     private let networkService: ATExampleNetworkServiceProtocol
     private let userId: Int
@@ -25,15 +25,5 @@ public class ATAlbumCoordinatorViewModel {
     
     func albumsViewModel() -> ATAlbumsViewModel {
         ATAlbumsViewModel(networkService: networkService, userId: userId)
-    }
-}
-
-extension ATAlbumCoordinatorViewModel: Equatable, Hashable {
-    public static func == (lhs: ATAlbumCoordinatorViewModel, rhs: ATAlbumCoordinatorViewModel) -> Bool {
-        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
-    }
-    
-    public func hash(into hasher: inout Hasher) {
-        hasher.combine(ObjectIdentifier(self))
     }
 }
