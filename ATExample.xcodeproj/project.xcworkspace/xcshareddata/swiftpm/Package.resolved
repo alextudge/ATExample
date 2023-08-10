@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/alextudge/ATNetworking",
       "state" : {
-        "revision" : "edb6f9b13edd6fc07c9ed6686c3cfbdab292b448",
-        "version" : "1.0.8"
+        "revision" : "19870933a278ff7daa398a6055c2ebb7097bcd6c",
+        "version" : "1.0.9"
       }
     }
   ],
